@@ -1,4 +1,2 @@
 FROM mysql:5.6
-RUN groupadd -r mysql && useradd -r -g mysql mysql
-RUN apt-get update && apt-get install -y --no-install-recommends 
 EXPOSE 3306
