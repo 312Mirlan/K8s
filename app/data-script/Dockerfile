@@ -1,7 +1,9 @@
 FROM alpine:3.7
 WORKDIR /opt
 COPY mydatabase.sql /opt
-RUN apk add --update mysql mysql-client
+RUN apk update && \
+    apk add mysql-client 
+RUN mysql -h db -uroot -proot mydatabase < /opt/mydatabase.sq    
 COPY import.sh /opt
 EXPOSE 3306
-CMD import.sh 
+CMD mysql import.sh 
