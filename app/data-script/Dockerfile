@@ -3,7 +3,6 @@ WORKDIR /opt
 COPY mydatabase.sql /opt
 RUN apk update && \
     apk add mysql-client 
-RUN mysql -h db -uroot -proot mydatabase < /opt/mydatabase.sq    
 COPY import.sh /opt
 EXPOSE 3306
 CMD mysql import.sh 
