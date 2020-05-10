@@ -4,7 +4,7 @@ FROM python:3.6
 WORKDIR /app
 
 # Install app dependencies
-COPY /app/front/ /app
+COPY front /app
 RUN pip install -r requirements.txt
 
 EXPOSE 3001
